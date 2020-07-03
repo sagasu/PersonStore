@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using PersonStore.Services.Data;
 using PersonStore.Services.Data.Model;
 using PersonStore.Services.DTO;
@@ -31,6 +33,12 @@ namespace PersonStore.Services.Services
             var person = _mapper.Map<Person>(personDto);
             var created = await _context.Persons.AddAsync(person);
             return created.Entity.Id;
+        }
+
+        public async Task<IEnumerable<PersonDTO>> GetAllPeople()
+        {
+            var allPeople = await _context.Persons.ToListAsync();
+            return _mapper.Map<IEnumerable<PersonDTO>>(allPeople);
         }
     }
 }

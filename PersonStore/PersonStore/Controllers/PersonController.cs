@@ -25,5 +25,12 @@ namespace PersonStore.Controllers
             var newlyCreatedId = await _personService.CreatePerson(personDto);
             return Ok(newlyCreatedId);
         }
+
+        [HttpGet]
+        public async Task<OkObjectResult> GetAllPeople()
+        {
+            var allPeople = await _personService.GetAllPeople();
+            return Ok(allPeople);
+        }
     }
 }
