@@ -1,7 +1,7 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using PersonStore.Services.Data;
+using PersonStore.Services.Data.Creation;
 using PersonStore.Services.Services;
 
 namespace PersonStore.Services.Config
@@ -14,6 +14,7 @@ namespace PersonStore.Services.Config
                 options.UseSqlite("Data Source=store.db"));
 
             services.AddTransient<IPersonService, PersonService>();
+            services.AddTransient<IStoreTablesCreationService, StoreTablesCreationService>();
         }
     }
 }
