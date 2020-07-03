@@ -32,6 +32,7 @@ namespace PersonStore.Services.Services
 
             var person = _mapper.Map<Person>(personDto);
             var created = await _context.Persons.AddAsync(person);
+            await _context.SaveChangesAsync();
             return created.Entity.Id;
         }
 

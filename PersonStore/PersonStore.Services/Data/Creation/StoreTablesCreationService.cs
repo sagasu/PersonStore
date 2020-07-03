@@ -21,7 +21,7 @@ namespace PersonStore.Services.Data.Creation
         public async Task Create()
         {
             const string createPersonsTable =
-                "CREATE TABLE Persons (ID int, Name varchar(100), CreateTime datetime)";
+                "CREATE TABLE Persons (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name varchar(100), CreateTime datetime)";
             var creation = await _context.Database.ExecuteSqlRawAsync(createPersonsTable);
 
         }

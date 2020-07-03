@@ -9,9 +9,10 @@ namespace PersonStore.Services.Config
     {
         public static void Configure(IServiceCollection services)
         {
-            var mapperConfiguration = new MapperConfiguration(cfg => 
-                cfg.CreateMap<PersonDTO, Person>()
-            );
+            var mapperConfiguration = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<PersonDTO, Person>().ReverseMap();
+            });
             var mapper = mapperConfiguration.CreateMapper();
             services.AddSingleton(mapper);
         }
