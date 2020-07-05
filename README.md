@@ -26,5 +26,6 @@ Currently FE is really simple. I feel like a form is already a good candidate to
 4) I don't use transactions for a single insert operation. If I were to insert into multiple tables/data stores at this same time, I would wrap it in a transaction.
 
 5) I don't see point in writing unit tests/integration/system tests in C# for entry point project (PersonStore).
-6) I like unit testing guidelines from Roy book. This is what I try to follow.
+6) I like unit testing guidelines from Roy Osherove book (The Art of Unit Testing). This is what I try to follow. What is written in a book is that you should not try to test frameworks like EF, or code that runs a third party libraries, just focus on a business logic code. That is why I am not interested in putting a test harness on top of Persons table creation script, EF or automapper.
+8) I would normally add extra level of integration testing/system testing on top of my API, but I feel that I already spent too much time on this exercise.
 7) StoreController exposes a method to create a Person table, in case if someone would like to drop provided SQL Lite database and create it from scratch.
