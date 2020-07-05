@@ -1,5 +1,5 @@
 # Description
-This project is a simple a person store.
+This project is a simple a person store. There are two folders:
 * **PersonStore** is a BE project (.NET Core C#) 
 * **person-store** is a FE project (react, hooks)
 
