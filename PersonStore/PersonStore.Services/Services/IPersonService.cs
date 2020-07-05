@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using PersonStore.Services.Data.Model;
 using PersonStore.Services.DTO;
 
 namespace PersonStore.Services.Services
@@ -8,5 +9,6 @@ namespace PersonStore.Services.Services
     {
         Task<int> CreatePerson(PersonDTO personDto);
         Task<IEnumerable<PersonDTO>> GetAllPeople();
+        Task<PersonDTO> GetById(int id);
     }
 }

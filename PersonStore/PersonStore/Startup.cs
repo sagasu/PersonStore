@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PersonStore.Config;
 using PersonStore.Services.Config;
 
 namespace PersonStore
@@ -22,7 +23,10 @@ namespace PersonStore
             services.AddControllers();
             DIConfig.Configure(services);
             AutomapperConfig.Configure(services);
-
+            services.AddCors(c =>
+            {
+                c.AddPolicy(CORSConfig.ALLOW_ORIGIN, options => options.WithOrigins(CORSConfig.CLIENT_APP_URL).AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
             services.AddSwaggerGen();
         }
 
@@ -42,10 +46,11 @@ namespace PersonStore
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Person Store API V1");
             });
 
+            
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseCors(options => options.WithOrigins(CORSConfig.CLIENT_APP_URL));
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

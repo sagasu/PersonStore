@@ -41,5 +41,11 @@ namespace PersonStore.Services.Services
             var allPeople = await _context.Persons.ToListAsync();
             return _mapper.Map<IEnumerable<PersonDTO>>(allPeople);
         }
+
+        public async Task<PersonDTO> GetById(int id)
+        {
+            var person = await _context.Persons.FirstOrDefaultAsync(x => x.Id == id);
+            return person == null ? null : _mapper.Map<PersonDTO>(person);
+        }
     }
 }
