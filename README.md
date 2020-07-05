@@ -1,6 +1,6 @@
-#Description
+# Description
 This project is a simple BE (.NET Core C#) and FE (react, hooks) for a person store.
-Backend is using SQL Light, which is included as a part of a project. There is no need to configure anything in order to run the application, no external data source is needed.
+Backend is using SQL Lite, which is included as a part of a project. There is no need to configure anything in order to run the application, no external data source is needed.
 
 One can just open VS and click run (`IIS Express`) to run the backend, and run `npm run start` to run frontend. Backend has CORS enabled to allowed calls from FE.
 
@@ -24,3 +24,4 @@ Currently FE is really simple. I feel like a form is already a good candidate to
 
 5) I don't see point in writing unit tests/integration/system tests in C# for entry point project (PersonStore).
 6) I like unit testing guidelines from Roy book. This is what I try to follow.
+7) StoreController exposes a method to create a Person table, in case if someone would like to drop provided SQL Lite database and create it from scratch.
