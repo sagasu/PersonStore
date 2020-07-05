@@ -1,5 +1,5 @@
-## Various scripts
-In index.js you can comment App.js import and uncomment Login, Register, AppPlayground imports to play with various functionalities.
+## Simple frontend for Person Store
+It connects to a default url of a backend application.
 
 ## Available Scripts
 

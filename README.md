@@ -1,3 +1,21 @@
+#Description
+This project is a simple BE (.NET Core C#) and FE (react, hooks) for a person store.
+Backend is using SQL Light, which is included as a part of a project. There is no need to configure anything in order to run the application, no external data source is needed.
+
+One can just open VS and click run (`IIS Express`) to run the backend, and run `npm run start` to run frontend. Backend has CORS enabled to allowed calls from FE.
+
+On a backed following operations are exposed.
+![alt text](https://github.com/sagasu/PersonStore/blob/master/SimpleOperations.png?raw=true)
+
+On a fronted user is able to add and search for people.
+![alt text](https://github.com/sagasu/PersonStore/blob/master/ListingAllPeopleWithCreationTime.png?raw=true)
+
+Simple loading message and error handling is supported.
+![alt text](https://github.com/sagasu/PersonStore/blob/master/ErrorHandlingAndLoading.png?raw=true)
+
+# person-store FE
+Currently FE is really simple. I feel like a form is already a good candidate to split into smaller files.
+
 # PersonStore BE
 1) I like to think as an API project (PersonStore) as an entry point, it should be as simple as possible.
 2) I like to extract everything I can to a Service project (like DI config, automapper config, etc...).
