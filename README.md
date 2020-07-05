@@ -1,5 +1,8 @@
 # Description
-This project is a simple BE (.NET Core C#) and FE (react, hooks) for a person store.
+This project is a simple a person store.
+* **PersonStore** is a BE project (.NET Core C#) 
+* **person-store** is a FE project (react, hooks)
+
 Backend is using SQL Lite, which is included as a part of a project. There is no need to configure anything in order to run the application, no external data source is needed.
 
 One can just open VS and click run (`IIS Express`) to run the backend, and run `npm run start` to run frontend. Backend has CORS enabled to allowed calls from FE.
